@@ -1,14 +1,10 @@
-# Dockerfile
 FROM jvmilazz0/kavita:latest
 
-# Set default timezone
 ENV TZ=UTC
 
-# Create the necessary directories for Kavita
+# Optional: set permissions just in case
 USER root
-RUN mkdir -p /kavita/config /kavita/manga /kavita/comics /kavita/books && \
-    chown -R 1000:1000 /kavita
+RUN mkdir -p /config && chown -R 1000:1000 /config
 USER 1000
 
-# Expose port
 EXPOSE 5000
