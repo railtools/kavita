@@ -7,11 +7,10 @@ EXPOSE 5000
 # Set default timezone (can be overridden with Railway environment variable)
 ENV TZ=UTC
 
-# Create volume mount points
-VOLUME ["/kavita/config", "/manga", "/comics", "/books"]
+# Single volume for everything under /kavita
+VOLUME ["/kavita"]
 
-# Kavita runs as non-root user, so we need to ensure permissions
+# Ensure proper permissions for the kavita directory
 USER root
-RUN mkdir -p /kavita/config /manga /comics /books && \
-    chown -R 1000:1000 /kavita/config /manga /comics /books
+RUN chown -R 1000:1000 /kavita
 USER 1000
