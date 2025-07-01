@@ -2,9 +2,9 @@ FROM jvmilazz0/kavita:latest
 
 ENV TZ=UTC
 
-# Optional: set permissions just in case
 USER root
-RUN mkdir -p /config && chown -R 1000:1000 /config
-USER 1000
+COPY docker-entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 5000
