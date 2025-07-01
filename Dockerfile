@@ -6,6 +6,3 @@ ENV TZ=UTC
 
 # Expose port
 EXPOSE 5000
-
-# Single volume for everything under /kavita
-VOLUME ["/kavita"]
