@@ -1,16 +1,16 @@
 # Dockerfile
-FROM jvmilazz0/kavita:latest
+FROM lscr.io/linuxserver/kavita:latest
 
-# Expose the port that Kavita runs on
-EXPOSE 5000
-
-# Set default timezone (can be overridden with Railway environment variable)
+# Set default timezone
 ENV TZ=UTC
 
-# Single volume for everything under /kavita
-VOLUME ["/kavita"]
+# Expose port
+EXPOSE 5000
 
-# Ensure proper permissions for the kavita directory
+# Single volume for everything under /config (LinuxServer.io standard)
+VOLUME ["/config"]
+
+# Ensure proper permissions for the config directory
 USER root
-RUN chown -R 1000:1000 /kavita
+RUN chown -R 1000:1000 /config
 USER 1000
