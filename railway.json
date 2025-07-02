@@ -2,11 +2,6 @@
   "build": {
     "dockerfilePath": "Dockerfile"
   },
-  "deploy": {
-    "healthcheckPath": "/",
-    "restartPolicyType": "ALWAYS",
-    "restartPolicyMaxRetries": 10
-  },
   "variables": {
     "PUID": "0",
     "PGID": "0",
@@ -19,6 +14,5 @@
       "targetPort": 5000,
       "protocol": "TCP"
     }
-  ],
-  "environments": {}
+  ]
 }
