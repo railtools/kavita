@@ -15,8 +15,8 @@
   },
   "ports": [
     {
-      "port": 8080,       // what Railway listens on
-      "targetPort": 5000, // what your app listens on inside the container
+      "port": 8080,
+      "targetPort": 5000,
       "protocol": "TCP"
     }
   ],
