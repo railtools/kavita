@@ -1,0 +1,24 @@
+{
+  "build": {
+    "dockerfilePath": "Dockerfile"
+  },
+  "deploy": {
+    "healthcheckPath": "/",
+    "restartPolicyType": "ALWAYS",
+    "restartPolicyMaxRetries": 10
+  },
+  "variables": {
+    "PUID": "0",
+    "PGID": "0",
+    "TZ": "Etc/UTC",
+    "RAILWAY_RUN_UID": "0"
+  },
+  "ports": [
+    {
+      "port": 5000,
+      "targetPort": 5000,
+      "protocol": "TCP"
+    }
+  ],
+  "environments": {}
+}
